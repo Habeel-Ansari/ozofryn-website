@@ -1759,8 +1759,12 @@ details.acc__body { padding-top: 18px; color: var(--c-ink-soft); max-width: 70ch
 .hero-nav.is-open .hero-nav__toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* --- Hero Nav drawer (mobile menu) --- */
+/* Explicitly hidden on all viewports by default; only shown via mobile media query */
+@media (min-width: 901px) {
+  .hero-nav__drawer { display: none !important; }
+}
 .hero-nav__drawer {
-  display: none;
+  display: none !important;
   flex-direction: column;
   background: rgba(8,5,25,0.95);
   backdrop-filter: blur(24px);
@@ -1799,7 +1803,7 @@ details.acc__body { padding-top: 18px; color: var(--c-ink-soft); max-width: 70ch
   .hero-nav__cta   { display: none; }
   .hero-nav__toggle { display: flex; }
   /* Show drawer when open */
-  .hero-nav.is-open .hero-nav__drawer { display: flex; }
+  .hero-nav.is-open .hero-nav__drawer { display: flex !important; }
   /* Round only top corners when menu is open */
   .hero-nav.is-open .hero-nav__bar { border-radius: 12px 12px 0 0; }
   /* Tighten nav padding on mobile */
