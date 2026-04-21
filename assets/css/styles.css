@@ -1843,14 +1843,22 @@ details.acc__body { padding-top: 18px; color: var(--c-ink-soft); max-width: 70ch
 
 /* --- Product cards mobile --- */
 @media (max-width: 600px) {
-  .product-card__media { height: 160px; }
   .grid-3 { grid-template-columns: 1fr; }
+}
+/* On touch devices, always reveal media — hover doesn't work on mobile */
+@media (hover: none) {
+  .product-card__media { clip-path: inset(0 0 0 0) !important; }
+  .product-card__body { color: #fff !important; }
+  .product-card__body .eyebrow::before { background: var(--c-chartreuse) !important; }
+  .product-card__arrow { opacity: 1 !important; transform: none !important; }
 }
 
 /* --- Split sections mobile --- */
 @media (max-width: 768px) {
   .split { gap: 40px; }
   .split__media { height: 240px; aspect-ratio: unset; width: 100%; }
+  /* Stack caption spans vertically so they don't smash together */
+  .split__media-caption { flex-direction: column; gap: 4px; align-items: flex-start; }
   /* Center-align text column and button on mobile (both split orientations) */
   .split > div:not(.split__media) { text-align: center; }
   .split > div:not(.split__media) .check-list { text-align: left; }
