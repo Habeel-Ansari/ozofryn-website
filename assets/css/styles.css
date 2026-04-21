@@ -1851,10 +1851,10 @@ details.acc__body { padding-top: 18px; color: var(--c-ink-soft); max-width: 70ch
 @media (max-width: 768px) {
   .split { gap: 40px; }
   .split__media { height: 240px; aspect-ratio: unset; width: 100%; }
-  /* Center-align text column and button on mobile */
-  .split > div:first-child { text-align: center; align-items: center; }
-  .split > div:first-child .check-list { text-align: left; }
-  .split > div:first-child [data-reveal]:last-child { display: flex; justify-content: center; }
+  /* Center-align text column and button on mobile (both split orientations) */
+  .split > div:not(.split__media) { text-align: center; }
+  .split > div:not(.split__media) .check-list { text-align: left; }
+  .split > div:not(.split__media) [data-reveal]:last-child { display: flex; justify-content: center; }
 }
 
 /* --- Steps mobile --- */
