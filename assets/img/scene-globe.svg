@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="g-bg" cx=".5" cy=".5" r=".8">
+      <stop offset="0" stop-color="#130C42"/>
+      <stop offset="1" stop-color="#0A0630"/>
+    </radialGradient>
+    <radialGradient id="g-core" cx=".5" cy=".45" r=".5">
+      <stop offset="0" stop-color="#412ECE"/>
+      <stop offset="0.7" stop-color="#130C42"/>
+      <stop offset="1" stop-color="#0A0630"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#g-bg)"/>
+  <!-- Grid latitude/longitude behind -->
+  <g stroke="#D9F323" stroke-opacity="0.08" stroke-width="1" fill="none">
+    <circle cx="400" cy="500" r="200"/>
+    <circle cx="400" cy="500" r="280"/>
+    <circle cx="400" cy="500" r="360"/>
+    <ellipse cx="400" cy="500" rx="200" ry="60"/>
+    <ellipse cx="400" cy="500" rx="200" ry="120"/>
+    <ellipse cx="400" cy="500" rx="200" ry="180"/>
+    <line x1="400" y1="300" x2="400" y2="700"/>
+    <line x1="200" y1="500" x2="600" y2="500"/>
+  </g>
+  <!-- Globe -->
+  <circle cx="400" cy="500" r="180" fill="url(#g-core)" stroke="#D9F323" stroke-opacity="0.5" stroke-width="1"/>
+  <!-- Continent blobs -->
+  <g fill="#D9F323" opacity="0.85">
+    <path d="M320 430 Q340 420 360 440 Q380 460 360 480 Q340 490 310 470 Q300 450 320 430 Z"/>
+    <path d="M400 440 Q430 430 450 450 Q470 470 460 490 Q440 510 410 500 Q390 480 400 440 Z"/>
+    <path d="M350 520 Q380 510 400 530 Q420 550 400 570 Q370 580 350 560 Q340 540 350 520 Z"/>
+    <path d="M450 540 Q480 530 490 550 Q500 570 480 590 Q460 590 450 570 Q440 550 450 540 Z"/>
+  </g>
+  <!-- Connection points + arcs between India/UAE -->
+  <g>
+    <circle cx="430" cy="470" r="4" fill="#D9F323"/>
+    <circle cx="440" cy="475" r="8" fill="none" stroke="#D9F323" opacity="0.5"/>
+    <circle cx="470" cy="495" r="4" fill="#D9F323"/>
+    <circle cx="470" cy="495" r="8" fill="none" stroke="#D9F323" opacity="0.5"/>
+    <path d="M430 470 Q450 440 470 495" stroke="#D9F323" stroke-width="1.4" fill="none"/>
+  </g>
+  <!-- Orbital ring -->
+  <ellipse cx="400" cy="500" rx="240" ry="30" fill="none" stroke="#D9F323" stroke-width="0.8" opacity="0.6" transform="rotate(-20 400 500)"/>
+  <ellipse cx="400" cy="500" rx="240" ry="30" fill="none" stroke="#412ECE" stroke-width="0.8" opacity="0.5" transform="rotate(30 400 500)"/>
+  <text x="680" y="960" font-family="Oswald, sans-serif" font-weight="700" font-size="40" fill="#D9F323" opacity="0.5">σ</text>
+</svg>

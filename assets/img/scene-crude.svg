@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky-c" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#0A0630"/>
+      <stop offset="1" stop-color="#412ECE"/>
+    </linearGradient>
+    <radialGradient id="pool-c" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#D9F323" stop-opacity="0.5"/>
+      <stop offset="0.7" stop-color="#0A0630" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#sky-c)"/>
+  <!-- Oil drip shape -->
+  <ellipse cx="400" cy="560" rx="310" ry="240" fill="url(#pool-c)"/>
+  <!-- Concentric ripples -->
+  <ellipse cx="400" cy="560" rx="180" ry="100" fill="none" stroke="#D9F323" stroke-width="1" opacity="0.6"/>
+  <ellipse cx="400" cy="560" rx="240" ry="140" fill="none" stroke="#D9F323" stroke-width="0.8" opacity="0.4"/>
+  <ellipse cx="400" cy="560" rx="300" ry="180" fill="none" stroke="#D9F323" stroke-width="0.6" opacity="0.25"/>
+  <!-- Drop top -->
+  <path d="M400 240 Q360 340 400 420 Q440 340 400 240 Z" fill="#D9F323" opacity="0.95"/>
+  <!-- Barrels silhouette at bottom -->
+  <g fill="#0A0630" stroke="#D9F323" stroke-width="0.8">
+    <rect x="60" y="840" width="60" height="90" rx="2"/>
+    <rect x="140" y="830" width="60" height="100" rx="2"/>
+    <rect x="220" y="840" width="60" height="90" rx="2"/>
+    <rect x="600" y="830" width="60" height="100" rx="2"/>
+    <rect x="680" y="840" width="60" height="90" rx="2"/>
+  </g>
+  <!-- Barrel rings -->
+  <g stroke="#D9F323" stroke-opacity="0.4" stroke-width="0.6" fill="none">
+    <rect x="60" y="860" width="60" height="2"/>
+    <rect x="60" y="900" width="60" height="2"/>
+    <rect x="140" y="855" width="60" height="2"/>
+    <rect x="140" y="905" width="60" height="2"/>
+    <rect x="220" y="860" width="60" height="2"/>
+    <rect x="220" y="900" width="60" height="2"/>
+    <rect x="600" y="855" width="60" height="2"/>
+    <rect x="600" y="905" width="60" height="2"/>
+    <rect x="680" y="860" width="60" height="2"/>
+    <rect x="680" y="900" width="60" height="2"/>
+  </g>
+  <text x="680" y="960" font-family="Oswald, sans-serif" font-weight="700" font-size="40" fill="#D9F323" opacity="0.4">σ</text>
+</svg>

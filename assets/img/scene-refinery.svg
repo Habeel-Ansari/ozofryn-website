@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky-r" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#130C42"/>
+      <stop offset="0.6" stop-color="#412ECE" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#0A0630"/>
+    </linearGradient>
+    <linearGradient id="glow-r" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#D9F323" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#D9F323" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#sky-r)"/>
+  <!-- Distant glow -->
+  <rect y="680" width="800" height="150" fill="url(#glow-r)" opacity="0.4"/>
+  <!-- Refinery silhouette -->
+  <g fill="#0A0630" stroke="#D9F323" stroke-width="0.8">
+    <!-- Large cooling towers -->
+    <path d="M80 820 L90 600 L130 600 L140 820 Z"/>
+    <path d="M160 820 L170 560 L210 560 L220 820 Z"/>
+    <path d="M250 820 L260 640 L290 640 L300 820 Z"/>
+    <!-- Stacks -->
+    <rect x="340" y="500" width="14" height="320"/>
+    <rect x="360" y="540" width="14" height="280"/>
+    <rect x="390" y="480" width="16" height="340"/>
+    <!-- Tanks -->
+    <rect x="440" y="700" width="80" height="120"/>
+    <rect x="540" y="680" width="100" height="140"/>
+    <!-- Pipework -->
+    <rect x="680" y="750" width="80" height="8"/>
+    <rect x="680" y="775" width="80" height="6"/>
+  </g>
+  <!-- Flames on stacks -->
+  <g fill="#D9F323">
+    <path d="M347 500 Q340 480 347 468 Q354 480 347 500 Z" opacity="0.9"/>
+    <path d="M367 540 Q360 522 367 510 Q374 522 367 540 Z" opacity="0.85"/>
+    <path d="M398 480 Q390 458 398 442 Q406 458 398 480 Z" opacity="0.95"/>
+  </g>
+  <!-- Steam plume -->
+  <g fill="#D9F323" opacity="0.12">
+    <ellipse cx="110" cy="580" rx="60" ry="20"/>
+    <ellipse cx="190" cy="540" rx="70" ry="22"/>
+  </g>
+  <!-- Lights scattered -->
+  <g fill="#D9F323">
+    <circle cx="460" cy="720" r="2"/>
+    <circle cx="500" cy="720" r="2"/>
+    <circle cx="560" cy="700" r="2"/>
+    <circle cx="600" cy="700" r="2"/>
+    <circle cx="640" cy="700" r="2"/>
+    <circle cx="100" cy="820" r="2"/>
+    <circle cx="180" cy="820" r="2"/>
+    <circle cx="300" cy="820" r="2"/>
+  </g>
+  <!-- Ground line -->
+  <rect y="820" width="800" height="180" fill="#000"/>
+  <text x="680" y="960" font-family="Oswald, sans-serif" font-weight="700" font-size="40" fill="#D9F323" opacity="0.4">σ</text>
+</svg>

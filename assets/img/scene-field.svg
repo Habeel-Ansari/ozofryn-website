@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky-f" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#0A0630"/>
+      <stop offset="0.6" stop-color="#412ECE"/>
+      <stop offset="1" stop-color="#073E1D"/>
+    </linearGradient>
+    <linearGradient id="ground-f" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#073E1D"/>
+      <stop offset="1" stop-color="#0A0630"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#sky-f)"/>
+  <!-- Sun -->
+  <circle cx="600" cy="300" r="80" fill="#D9F323" opacity="0.75"/>
+  <circle cx="600" cy="300" r="130" fill="#D9F323" opacity="0.15"/>
+  <!-- Field rows -->
+  <rect y="620" width="800" height="380" fill="url(#ground-f)"/>
+  <g stroke="#64CC8F" stroke-width="1" fill="none" opacity="0.7">
+    <path d="M-20 660 Q400 640 820 660"/>
+    <path d="M-20 700 Q400 680 820 700"/>
+    <path d="M-20 750 Q400 720 820 750"/>
+    <path d="M-20 810 Q400 770 820 810"/>
+    <path d="M-20 880 Q400 830 820 880"/>
+    <path d="M-20 960 Q400 900 820 960"/>
+  </g>
+  <!-- Granule fertilizer scatter -->
+  <g fill="#D9F323" opacity="0.9">
+    <circle cx="120" cy="700" r="3"/>
+    <circle cx="180" cy="740" r="4"/>
+    <circle cx="240" cy="710" r="3"/>
+    <circle cx="340" cy="770" r="5"/>
+    <circle cx="420" cy="720" r="3"/>
+    <circle cx="520" cy="760" r="4"/>
+    <circle cx="600" cy="730" r="3"/>
+    <circle cx="680" cy="780" r="5"/>
+    <circle cx="100" cy="820" r="4"/>
+    <circle cx="280" cy="850" r="3"/>
+    <circle cx="450" cy="830" r="5"/>
+    <circle cx="620" cy="880" r="3"/>
+  </g>
+  <!-- Grain stalks -->
+  <g stroke="#D9F323" stroke-width="1.4" opacity="0.75">
+    <line x1="140" y1="660" x2="146" y2="620"/>
+    <line x1="200" y1="660" x2="208" y2="610"/>
+    <line x1="260" y1="660" x2="266" y2="625"/>
+    <line x1="340" y1="660" x2="348" y2="615"/>
+    <line x1="420" y1="660" x2="428" y2="620"/>
+    <line x1="500" y1="660" x2="506" y2="610"/>
+  </g>
+  <text x="680" y="960" font-family="Oswald, sans-serif" font-weight="700" font-size="40" fill="#D9F323" opacity="0.5">σ</text>
+</svg>

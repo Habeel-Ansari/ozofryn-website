@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="sky-p" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#0A0630"/>
+      <stop offset="1" stop-color="#412ECE"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#sky-p)"/>
+  <!-- Horizon glow -->
+  <rect y="640" width="800" height="80" fill="#D9F323" opacity="0.1"/>
+  <!-- Pipeline perspective -->
+  <g fill="#0A0630" stroke="#D9F323" stroke-width="1">
+    <path d="M-20 900 L820 900 L820 860 L-20 860 Z"/>
+    <path d="M100 860 L700 860 L700 820 L100 820 Z"/>
+    <path d="M200 820 L600 820 L600 780 L200 780 Z"/>
+    <path d="M280 780 L520 780 L520 740 L280 740 Z"/>
+    <path d="M340 740 L460 740 L460 700 L340 700 Z"/>
+  </g>
+  <!-- Pipeline end caps -->
+  <g fill="#412ECE" opacity="0.6">
+    <circle cx="400" cy="720" r="20"/>
+  </g>
+  <!-- Support beams -->
+  <g stroke="#D9F323" stroke-width="2" opacity="0.85">
+    <line x1="120" y1="860" x2="120" y2="940"/>
+    <line x1="280" y1="860" x2="280" y2="940"/>
+    <line x1="440" y1="860" x2="440" y2="940"/>
+    <line x1="600" y1="860" x2="600" y2="940"/>
+    <line x1="760" y1="860" x2="760" y2="940"/>
+  </g>
+  <!-- Flow markers -->
+  <g fill="#D9F323">
+    <polygon points="380,900 400,870 420,900"/>
+    <polygon points="380,870 400,840 420,870" opacity="0.7"/>
+    <polygon points="380,840 400,810 420,840" opacity="0.4"/>
+  </g>
+  <!-- Distant structure -->
+  <g fill="#0A0630" stroke="#D9F323" stroke-width="0.6">
+    <rect x="620" y="600" width="20" height="140"/>
+    <rect x="660" y="630" width="14" height="110"/>
+    <rect x="690" y="610" width="18" height="130"/>
+  </g>
+  <text x="680" y="960" font-family="Oswald, sans-serif" font-weight="700" font-size="40" fill="#D9F323" opacity="0.4">σ</text>
+</svg>
