@@ -169,7 +169,7 @@ section.tight{ padding-block: clamp(2rem, 4vw, 3.25rem); }
   font-size:var(--text-control);
   font-weight:700;
   letter-spacing:.01em;
-  border-radius:3px;
+  border-radius:8px;
   border:1px solid transparent;
   cursor:pointer;
   transition:background-color .2s ease, color .2s ease, border-color .2s ease, transform .15s ease;
