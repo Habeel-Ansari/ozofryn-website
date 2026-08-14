@@ -16,19 +16,23 @@
   --surface-dark:#0E1420;  /* used only for footer + closing band */
   --surface-dark-soft:#161D2C;
 
-  --accent:     #358611;   /* approved brand accent (v2, dark green) — used sparingly */
-  --accent-ink: #FFFFFF;   /* text sitting on accent */
+  --accent:       #358611;  /* approved brand accent (dark green) — now used confidently, not sparingly (client feedback: v1 lacked color) */
+  --accent-deep:  #2A6A0E;  /* hover/active state for accent-filled elements */
+  --accent-tint:  #EFF7E8;  /* light accent wash for section backgrounds */
+  --accent-ink:   #FFFFFF;  /* text sitting on accent */
   --link:       #23306B;   /* restrained blue for links, not neon */
 
   --tbc-bg:     #FBF6E8;
   --tbc-border: #E4CE8B;
-  --tbc-text:   #8A6A16;
+  --tbc-text:   #6B5211;  /* darkened from #8A6A16 for contrast — matches .tbc-note, which independently used this shade for its smaller text (6.9:1 vs 4.7:1 on --tbc-bg) */
 
   /* ---- Type ----
-     Per official brand guideline: Oswald (headlines), Inter (UI / sub-headings), Open Sans (body) */
-  --font-display: 'Oswald', 'Arial Narrow', sans-serif;
-  --font-ui:      'Inter', 'Segoe UI', Arial, sans-serif;
-  --font-body:    'Open Sans', 'Segoe UI', Arial, sans-serif;
+     Client reference: Bunker Partner (bunkerpartner.com) — Lexend used site-wide
+     for a rounder, warmer feel than the brand guideline's Oswald/Inter/Open Sans.
+     One family, three weights, still three "roles" per DESIGN.md's Three-Role Rule. */
+  --font-display: 'Lexend', 'Segoe UI', Arial, sans-serif;
+  --font-ui:      'Lexend', 'Segoe UI', Arial, sans-serif;
+  --font-body:    'Lexend', 'Segoe UI', Arial, sans-serif;
   --nav-h: 76px;
 
   /* ---- Supplementary size scale ----
@@ -42,8 +46,12 @@
   --text-body-sm: .94rem;   /* nav links, card copy, list rows — a touch below base body */
   --text-control: .95rem;   /* buttons, form inputs, hero meta emphasis */
 
-  /* ---- Rhythm ---- */
-  --container: 1200px;
+  /* ---- Rhythm ----
+     Client reference: Bunker Partner (bunkerpartner.com) — measured via
+     getComputedStyle(), their sections use edge-to-edge Elementor containers
+     (max-width: min(100%, 2560px), ~30-32px fixed padding), not a centered
+     column. Widened from 1200px so sections fill the viewport the same way. */
+  --container: 2200px;
   --gap: clamp(1.25rem, 2.4vw, 2rem);
   --section-y: clamp(3.5rem, 7vw, 6.5rem);
 }
@@ -70,16 +78,22 @@ body{
 h1,h2,h3,h4{
   font-family:var(--font-display);
   color:var(--ink);
-  font-weight:700;
+  font-weight:500;
   line-height:1.18;
   margin:0 0 .6em;
-  letter-spacing:-0.05em;
+  letter-spacing:-0.02em;
 }
-h1{ font-size:clamp(2.05rem, 3.6vw, 3.1rem); }
-h2{ font-size:clamp(1.55rem, 2.6vw, 2.15rem); }
-h3{ font-size:clamp(1.15rem, 1.5vw, 1.4rem); }
-h4{ font-size:1.05rem; }
-p{ margin:0 0 1em; }
+/* Heading scale matched to Bunker Partner (getComputedStyle() at 1920px:
+   h1 102px/500/-2px, h2 50px/500/-2px) — weight and tracking dropped to their
+   lighter, tighter values now that size carries the emphasis. Client felt the
+   first pass (max 102px) read too big, so the ceiling was pulled back ~22%
+   toward Bunker Partner's own narrower-viewport size (measured 80px at 1014px)
+   while keeping the same weight/tracking treatment. */
+h1{ font-size:clamp(2.5rem, 4.75vw, 5rem); }
+h2{ font-size:clamp(1.75rem, 3.2vw, 2.5rem); }
+h3{ font-size:clamp(1.25rem, 1.7vw, 1.5rem); }
+h4{ font-size:1.1rem; }
+p{ margin:0 0 1em; max-width:70ch; }
 a{ color:var(--link); text-decoration:none; }
 a.text-link{
   color:var(--ink);
@@ -91,7 +105,7 @@ a.text-link{
   gap:.4em;
   transition:border-color .2s ease, color .2s ease;
 }
-a.text-link:hover{ color:var(--link); border-color:var(--link); }
+a.text-link:hover{ color:var(--accent-deep); border-color:var(--accent-deep); }
 a.text-link svg{ width:14px; height:14px; flex:none; transition:transform .2s ease; }
 a.text-link:hover svg{ transform:translateX(3px); }
 
@@ -121,7 +135,7 @@ section.tight{ padding-block: clamp(2rem, 4vw, 3.25rem); }
   font-weight:700;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:var(--ink-mute);
+  color:var(--accent-deep);
   margin-bottom:.9em;
 }
 .eyebrow::before{
@@ -177,11 +191,11 @@ section.tight{ padding-block: clamp(2rem, 4vw, 3.25rem); }
 }
 .btn:active{ transform:translateY(1px); }
 .btn-primary{
-  background:var(--ink);
+  background:var(--accent);
   color:#fff;
-  border-color:var(--ink);
+  border-color:var(--accent);
 }
-.btn-primary:hover{ background:#000; border-color:#000; }
+.btn-primary:hover{ background:var(--accent-deep); border-color:var(--accent-deep); }
 .btn-outline{
   background:transparent;
   color:var(--ink);
@@ -221,10 +235,10 @@ section.tight{ padding-block: clamp(2rem, 4vw, 3.25rem); }
   align-items:flex-start;
   background:var(--tbc-bg);
   border:1px solid var(--tbc-border);
-  color:#6B5211;
+  color:var(--tbc-text);
   padding:.9em 1.1em;
   border-radius:6px;
-  font-size:.88rem;
+  font-size:var(--text-caption);
   margin:1.25em 0;
 }
 .tbc-note svg{ flex:none; width:18px; height:18px; margin-top:.15em; }
@@ -251,7 +265,7 @@ section.tight{ padding-block: clamp(2rem, 4vw, 3.25rem); }
   gap:1.5rem;
 }
 .nav__logo{ display:flex; align-items:center; flex:none; }
-.nav__logo img{ height:30px; width:auto; }
+.nav__logo img{ height:38px; width:auto; }
 
 .nav__links{ display:flex; align-items:center; gap:2rem; margin:0; padding:0; list-style:none; }
 .nav__links > li{ position:relative; margin:0; }
@@ -263,7 +277,7 @@ section.tight{ padding-block: clamp(2rem, 4vw, 3.25rem); }
   display:flex; align-items:center; gap:.35em;
   padding:.5em 0;
 }
-.nav__links a:hover{ color:var(--link); }
+.nav__links a:hover{ color:var(--accent-deep); }
 .nav__links .nav__has-sub > a svg{ width:11px; height:11px; transition:transform .2s ease; }
 
 .nav__sub{
@@ -383,7 +397,7 @@ section.tight{ padding-block: clamp(2rem, 4vw, 3.25rem); }
   font-size:var(--text-sm); color:var(--ink-mute); margin-bottom:1.25em;
 }
 .breadcrumb a{ color:var(--ink-mute); }
-.breadcrumb a:hover{ color:var(--link); }
+.breadcrumb a:hover{ color:var(--accent-deep); }
 
 /* ---------------------------------------------------------
    Media placeholder system
@@ -439,7 +453,7 @@ section.tight{ padding-block: clamp(2rem, 4vw, 3.25rem); }
   background:#fff;
   transition:border-color .2s ease, box-shadow .2s ease;
 }
-.division-card:hover{ border-color:#C7CBD4; box-shadow:0 18px 40px rgba(15,20,30,.06); }
+.division-card:hover{ border-color:var(--accent); box-shadow:0 18px 40px rgba(15,20,30,.06); }
 .division-card__tag{
   display:inline-block;
   font-family:var(--font-ui);
@@ -477,7 +491,7 @@ section.tight{ padding-block: clamp(2rem, 4vw, 3.25rem); }
 .step{ display:flex; gap:1.25rem; padding:1.5rem 0; border-top:1px solid var(--line); }
 .step:last-child{ border-bottom:1px solid var(--line); }
 .step__num{
-  flex:none; width:2.4rem; font-weight:700; color:var(--ink-mute);
+  flex:none; width:2.4rem; font-weight:700; color:var(--accent-deep);
   font-variant-numeric:tabular-nums; font-size:1rem; padding-top:.1em;
 }
 .step__body h4{ margin-bottom:.3em; }
@@ -563,7 +577,7 @@ form.is-error .form-error-msg{ display:flex; }
 .footer__top{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:2.5rem; padding-bottom:2.5rem; border-bottom:1px solid rgba(255,255,255,.1); }
 @media (max-width:820px){ .footer__top{ grid-template-columns:1fr 1fr; } }
 @media (max-width:520px){ .footer__top{ grid-template-columns:1fr; } }
-.footer__logo{ height:26px; width:auto; margin-bottom:1em; }
+.footer__logo{ height:34px; width:auto; margin-bottom:1em; }
 .footer p{ color:#9CA1B0; font-size:var(--text-caption); }
 .footer h5{ font-family:var(--font-ui); color:#fff; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; margin-bottom:1em; }
 .footer ul{ list-style:none; padding:0; margin:0; }
@@ -584,7 +598,7 @@ form.is-error .form-error-msg{ display:flex; }
    --------------------------------------------------------- */
 .tag-pill{
   border:1px solid var(--line); border-radius:100px;
-  padding:.5em 1.1em; font-size:.88rem; font-weight:700;
+  padding:.5em 1.1em; font-size:var(--text-caption); font-weight:700;
   color:var(--ink); background:#fff;
 }
 
