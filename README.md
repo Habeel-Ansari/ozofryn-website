@@ -9,8 +9,11 @@ Static HTML/CSS/JS build implementing the developer brief in
 - Business hierarchy is now **Company → Business (Bunkering / Bulk
   Trading) → Markets (UAE / India) → Responsibility → Contact**.
   Products are secondary and no longer drive the homepage or nav.
-- White canvas, charcoal type, the brand accent (`#D9F323`) used only
-  as a small underline/tag device — not a dominant colour.
+- White canvas, charcoal type, the brand accent (**Verified Green**,
+  `#358611`) used confidently on the primary interactive path
+  (buttons, eyebrows, hover states) plus one full-section fill per
+  page (`.band-accent`, using the deeper `#2A6A0E`) — not the retired
+  neon chartreuse `#D9F323`. See `DESIGN.md` for the full system.
 - No animated counters, custom cursor, magnetic buttons, marquee or
   parallax. Only a subtle scroll-reveal, per the brief's "subtle
   transitions only" instruction.

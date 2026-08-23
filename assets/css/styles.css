@@ -13,8 +13,8 @@
   --line-soft:  #EEF0F3;
   --surface:    #FFFFFF;   /* page canvas — mandated white */
   --surface-alt:#F6F7F9;   /* alternating section tint */
-  --surface-dark:#0E1420;  /* used only for footer + closing band */
-  --surface-dark-soft:#161D2C;
+  --surface-dark:#0A1606;  /* closing band — dark green, derived from the brand accent (client feedback: "still dark blue" after the footer went green) */
+  --surface-dark-soft:#0C1B08;  /* footer — dark green, one step lighter than the closing band, same relationship as the original navy pair */
 
   --accent:       #358611;  /* approved brand accent (dark green) — now used confidently, not sparingly (client feedback: v1 lacked color) */
   --accent-deep:  #2A6A0E;  /* hover/active state for accent-filled elements */
@@ -571,6 +571,32 @@ form.is-error .form-error-msg{ display:flex; }
 .band-dark hr{ border-color:rgba(255,255,255,.12); }
 
 /* ---------------------------------------------------------
+   Accent band — full-bleed Verified Green section, white text.
+   The green sibling of .band-dark: one confident color moment
+   per page (client feedback: site read as "fully white,
+   lacking contrast"). Uses accent-deep, not accent, for a
+   safer white-text contrast margin (6.6:1 vs 4.6:1) and so a
+   full section doesn't read as one giant button.
+   --------------------------------------------------------- */
+.band-accent{
+  background:var(--accent-deep);
+  color:#EAF3E3;
+}
+.band-accent h2, .band-accent h3, .band-accent h4{ color:#fff; }
+.band-accent .lede{ color:#DCEACF; }
+.band-accent .na-note{ color:#CFE0C3; }
+.band-accent .eyebrow{ color:#fff; }
+.band-accent .eyebrow::before{ background:#fff; }
+.band-accent .step,
+.band-accent .step:last-child{ border-color:rgba(255,255,255,.22); }
+.band-accent .step__num{ color:#fff; }
+.band-accent .btn-outline{
+  color:#fff;
+  border-color:rgba(255,255,255,.5);
+}
+.band-accent .btn-outline:hover{ background:#fff; color:var(--accent-deep); border-color:#fff; }
+
+/* ---------------------------------------------------------
    Footer
    --------------------------------------------------------- */
 .footer{ background:var(--surface-dark-soft); color:#AEB3C0; padding-block:3.5rem 2rem; }
@@ -586,11 +612,11 @@ form.is-error .form-error-msg{ display:flex; }
 .footer a:hover{ color:#fff; }
 .footer__bottom{
   display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem;
-  padding-top:1.75rem; font-size:var(--text-sm); color:#787E8E;
+  padding-top:1.75rem; font-size:var(--text-sm); color:#8A909D;
 }
 .footer__tagline{ color:#9CA1B0; }
 .footer__legal-links{ display:flex; gap:1.25rem; flex-wrap:wrap; }
-.footer__legal-links a{ color:#787E8E; font-size:var(--text-sm); }
+.footer__legal-links a{ color:#8A909D; font-size:var(--text-sm); }
 .footer__legal-links a:hover{ color:#fff; }
 
 /* ---------------------------------------------------------
