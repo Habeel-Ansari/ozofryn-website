@@ -457,7 +457,7 @@ section.tight{ padding-block: clamp(2rem, 4vw, 3.25rem); }
 }
 .division-card:hover{ border-color:var(--accent); box-shadow:0 18px 40px rgba(15,20,30,.06); }
 .division-card__media{
-  aspect-ratio:2/1;
+  aspect-ratio:16/9;
   flex:none;
   overflow:hidden;
   margin:calc(var(--card-pad) * -1) calc(var(--card-pad) * -1) 1.5rem;
