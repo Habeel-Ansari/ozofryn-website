@@ -22,6 +22,14 @@
   --accent-ink:   #FFFFFF;  /* text sitting on accent */
   --link:       #23306B;   /* restrained blue for links, not neon */
 
+  /* ---- Accent 2 (round 8) — marks a duality/contrast in copy
+     (UAE vs India, Regional vs Domestic), never used for buttons or
+     any interactive/"act here" element — that stays Verified Green's
+     exclusive job. Client-supplied swatch, sampled from their own
+     reference PDF. */
+  --accent-2:      #FF954F;  /* base — large display text, tags, fills; on white this fails AA for body-size text (2.2:1), so pair with --accent-2-deep there */
+  --accent-2-deep: #B84900;  /* darkened via HSL lightness (not a flat RGB scale, to avoid drifting toward brown) — 5.3:1 on white, 4.9:1 on --surface-alt */
+
   --tbc-bg:     #FBF6E8;
   --tbc-border: #E4CE8B;
   --tbc-text:   #6B5211;  /* darkened from #8A6A16 for contrast — matches .tbc-note, which independently used this shade for its smaller text (6.9:1 vs 4.7:1 on --tbc-bg) */
@@ -636,6 +644,16 @@ form.is-error .form-error-msg{ display:flex; }
   padding:.5em 1.1em; font-size:var(--text-caption); font-weight:700;
   color:var(--ink); background:#fff;
 }
+
+/* ---------------------------------------------------------
+   Accent 2 — inline duality/contrast word marker (round 8)
+   .text-accent for white/--surface-alt backgrounds (AA-safe deep
+   shade); .text-accent-on-dark for green or dark surfaces (base
+   shade, ≥3:1 at heading sizes — do not use at body-copy sizes on
+   Verified Green, only on true dark surfaces where it clears 8:1+).
+   --------------------------------------------------------- */
+.text-accent{ color:var(--accent-2-deep); }
+.text-accent-on-dark{ color:var(--accent-2); }
 
 /* ---------------------------------------------------------
    Misc utility
