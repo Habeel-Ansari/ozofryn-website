@@ -504,6 +504,7 @@ section.tight{ padding-block: clamp(2rem, 4vw, 3.25rem); }
   padding:var(--card-pad);
   display:flex; flex-direction:column; height:100%;
   background:#fff;
+  color:var(--ink-soft); /* self-contained text color — the card is always white regardless of the section wrapping it (band-accent, band-dark), so it must not inherit the section's light-on-dark color */
   transition:border-color .2s ease, box-shadow .2s ease;
   overflow:hidden;
 }
